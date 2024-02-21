@@ -34,7 +34,7 @@ class Dog(Animal):
         return "Woof"
 
     def who_is_owner(self):
-        return owner.info()
+        return self.owner.info()
 
 owner = Owner("Mike", 18, "London")
 dog = Dog("Mimi", 15, "Labr", owner)
