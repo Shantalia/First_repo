@@ -1,5 +1,3 @@
-# Task 7/16
-
 class Animal:
     def __init__(self, nickname, weight):
         self.nickname = nickname
@@ -33,8 +31,8 @@ class Dog(Animal):
         return "Woof"
 
     def who_is_owner(self):
-        info = owner.info
+        return owner.info()
 
-owner = ("Mike", 18, "London")
+owner = Owner("Mike", 18, "London")
 dog = Dog("Mimi", 15, "Labr", owner)
 print(dog.who_is_owner())
