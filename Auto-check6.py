@@ -17,7 +17,10 @@ class Owner:
         self.address = address
         
     def info(self):
-        inf = {"name":self.name, "age":self.age, "address":self.address}
+        inf = {}
+        inf["name"] = self.name
+        inf["age"] = self.age
+        inf["address"] = self.address
         return inf
         
 
