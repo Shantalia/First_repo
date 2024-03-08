@@ -36,18 +36,37 @@ class Contacts:
         return self.contacts
 
     def add_contacts(self, name, phone, email, favorite):
-        self.name = name
-        self.phone = phone
-        self.email = email
-        self.favorite = favorite
-        contact = {"id":self.current_id, "name":self.name,\
-                                             "phone":self.phone, "email":self.email,\
-                                                "favorite":self.favorite}
+        contact = {'id':Contacts.current_id, 'name':name,'phone':phone, 'email':email,'favorite':favorite}
         self.contacts.append(contact)
-        print(self.contacts)
-        print(self.current_id)
+        Contacts.current_id+=1
         return "contact added"
     
 contact = Contacts()
 print(contact.add_contacts("Mini", "575858", "knlknl@bk.jv", True))
-print(contact.add_contacts("Mini", "575858", "knlknl@bk.jv", True))
+print(contact.add_contacts("Miki", "000111", "kl@bk.jv", False))
+print(contact.list_contacts())
+
+# Task 15/16
+class Contacts:
+    current_id = 1
+
+    def __init__(self):
+        self.contacts = []
+
+    def list_contacts(self):
+        return self.contacts
+
+    def add_contacts(self, name, phone, email, favorite):
+        self.contacts.append(
+            {
+                "id": Contacts.current_id,
+                "name": name,
+                "phone": phone,
+                "email": email,
+                "favorite": favorite,
+            }
+        )
+        Contacts.current_id += 1
+
+    def get_contact_by_id(self, id):
+        pass
